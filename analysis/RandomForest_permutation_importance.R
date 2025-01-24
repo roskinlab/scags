@@ -110,7 +110,7 @@ write.csv(permutation_data2, '/Mpaach_vjs3/RandomForest_importance_nonNaive_Feat
 
 ############################################################################
 #                                                                          # 
-#                             CHAVI cohort                                 #                                    
+#                             CHAVI cohort - scags                         #                                    
 ###########################################################################
 
 chavi_scag_data <- fread("/CHAVI_h1h2h3/Matrix_with_Isotype.csv")
@@ -118,6 +118,7 @@ metadata = read.delim('/CHAVI_h1h2h3/chavi_metadata.csv', header=T, sep=',')
 metadata = metadata[,c(1,5)]
 
 Subject=chavi_scag_data$subject
+#remove unwanted strings from subject identifier 
 Subject = gsub('boydlab:', '', Subject)
 chavi_scag_data$subject=NULL
 chavi_scag_data[chavi_scag_data > 0] = 1 
@@ -152,3 +153,48 @@ least_neg = abs(min(Permutation3$MeanDecreaseAccuracy))
 permutation_data3= Permutation3[Permutation3$MeanDecreaseAccuracy > least_neg,]
 
 write.csv(permutation_data3, '/CHAVI_h1h2h3/RandomForest_importance_Features_ntree5000.csv')
+
+############################################################################
+#                                                                          # 
+#                             CHAVI cohort - vj3                           #                                    
+###########################################################################
+
+Matrix <- fread("/CHAVI_vjs3/Full_Matrix_vjs3_isotype.csv")
+metadata = read.delim('/chavi_metadata.csv', header=T, sep=',')
+metadata = metadata[,c(1,5)]
+
+Subjects = Matrix$V1
+#remove unwanted strings from subject identifier 
+Subjects = gsub('boydlab:', '', Subjects)
+Matrix$V1 = NULL
+# make feature matrix cells binary
+Matrix[Matrix > 0] = 1 
+
+#filter columns based on the number of subjects that are in each column
+keep=which(colSums(Matrix)>10)
+Matrix2= Matrix[,..keep]
+Matrix2 = cbind.data.frame(Subjects, Matrix2)
+
+#Merge metadata and Matrix
+Matrix2 = merge(Matrix2,metadata, by.x  ='Subjects', by.y = 'subject')
+
+Matrix2$Subjects =NULL
+Matrix2$hiv_status = as.factor(Matrix2$hiv_status)
+
+#run random forest  model
+rf <- randomForest(y= as.factor(Matrix2$hiv_status) ,x= Matrix2[, 1:7321], 
+                   ntree=5000, proximity=TRUE, importance = TRUE, 
+                   keep.inbag=TRUE, strata =as.factor(Matrix2$hiv_status),
+                   sampsize = rep(43, 2)) 
+
+plot(rf$err.rate[,1], type = "l")
+plot(rf, main="OOB Error Rate vs. Number of Trees")
+
+Permutation_imp  = data.frame(importance(rf, type=1))
+Permutation_imp$Features = row.names(Permutation_imp)
+least_neg = abs(min(Permutation_imp$MeanDecreaseAccuracy))
+
+#carry out filtering
+permutation_data2= Permutation_imp[Permutation_imp$MeanDecreaseAccuracy > least_neg,]
+
+write.csv(permutation_data2, '/CHAVI_vjs3/RandomForest_importance_Features_mpaach_vj3_ntree5000.csv')
