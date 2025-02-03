@@ -96,7 +96,6 @@ weights = weights[order(weights$Coefficient.mean,decreasing = T ),]
 weights$Probes. = factor(weights$Probes., levels = c(weights$Probes.))
 
 #plot bar plots of the weights
-#make figure2 plot
 col2 = c(IgA1 =  "chocolate", IgM = "#BF219A", IgA2 = "#EF9708", IgG1= "#7C7BB2", IgD= "#56B4E9", IgG2="#A79FE1",IgG3="#CAC5F3", IgE="#11C638")
 
 
