@@ -14,7 +14,7 @@ library(gridExtra)
 #### HIV infection VJ3 barplot - Figure 5a ###
 
 #read in data with weigths of stable features across multiple l1 regularization
-weights = read.delim('/stable_features_across_all_penalty_terms_102224.csv', header = T, sep =',')
+weights = read.delim('CHAVI_vj3/stable_features_across_all_penalty_terms_102224.csv', header = T, sep =',')
 weights$X = NULL
 weights = weights[weights$C_value. == 1.20,]
 
