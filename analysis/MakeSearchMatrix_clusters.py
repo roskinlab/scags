@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 def main():
-    parser = argparse.ArgumentParser(description='', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser = argparse.ArgumentParser(description='Create Feature matrix for vj3 features', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('probe_files',metavar= 'file', nargs= 1, help='cluster files in each fold')
     parser.add_argument('subject_file', metavar='file',  nargs= '+',help = 'a file containing a list of all subjects in study cohort')
 
@@ -16,6 +16,7 @@ def main():
     cols =[]  
     directory= os.getcwd().split('/')
     
+    #step one
     indices = set()
     with open("". join(args.probe_files)) as file1:
         assert str("". join(args.probe_files)).endswith('clusters')
