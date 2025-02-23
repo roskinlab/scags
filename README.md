@@ -17,4 +17,11 @@ Steps on how to run and obtain Structurally Convergent Antibody Groups (**SCAGs*
         - Compile and run both scripts above using the commands found in '_lsf-jobs/do_make_MakeSearchMatrix_vj3.sh_'
 2. Next run logistic regression model to predict disease or phenotype of interest using the following script
     - '_analysis/logistic_regression_model_updated.py_'
+         - Compile and run the python script above using the commands found in '_lsf-jobs/do_machine_learning_model.sh_'
+
+<ins> **Disease prediction using SCAGs features**</ins>
+1. Create SCAGs isotype and non isotype feature matrix using the follosing scripts and steps
+    - '_analysis/MakeSearchMatrix_scags_isotype.py_'
+    - '_analysis/MakeSearchMatrix_nonaive_features.py_'
+
    
