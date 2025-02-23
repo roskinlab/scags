@@ -9,3 +9,6 @@ Steps on how to run and obtain Structurally Convergent Antibody Groups (**SCAGs*
 <ins> **Structure based features (SACGs features)**</ins>
 1. Heavy chain immunoglobulin sequence receptor repertoire for our study cohorts were processed with SAAB+([paper](https://pubmed.ncbi.nlm.nih.gov/20034110/)), using SCALOP to annotate non-CDR3 regions and FREAD to annotate CDR3 regions (SAAB+ code)
 2. SCAGs features were further annotated as follows: sequences having the same HCDR1, HCDR2 canonical and HCDR3 loop structures as annotated by SAAB+ are binned into a SCAGs group. SCAGs were further binned into groups based on their respective isotype (details in feature matrix creation section).
+
+## Step two : Disease/Phenotype prediction using BCR sequence and structural features
+<ins> **Disease prediction using VJ3 features**</ins>
