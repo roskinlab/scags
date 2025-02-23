@@ -1,5 +1,5 @@
-# scags
-Steps on how to run and obtain Structurally Convergent Antibody Groups (**SCAGS**)
+# SCAGs
+Steps on how to run and obtain Structurally Convergent Antibody Groups (**SCAGs**)
 
 ## Step one : Sequence and Structural BCR feature generation
 <ins> **Sequence based features (VJ3 features)**</ins>
