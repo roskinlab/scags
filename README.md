@@ -12,3 +12,9 @@ Steps on how to run and obtain Structurally Convergent Antibody Groups (**SCAGs*
 
 ## Step two : Disease/Phenotype prediction using BCR sequence and structural features
 <ins> **Disease prediction using VJ3 features**</ins>
+1. Create VJ3 isotype and non isotype feature matrix using the follosing scripts and steps
+    - '_analysis/MakeSearchMatrix_clusters.py_' and '_analysis/MakeSearchMatrix_EmptySignature.py_'
+        - Compile and run both scripts above using the commands found in '_lsf-jobs/do_make_MakeSearchMatrix_vj3.sh_'
+2. Next run logistic regression model to predict disease or phenotype of interest using the following script
+    - '_analysis/logistic_regression_model_updated.py_'
+   
