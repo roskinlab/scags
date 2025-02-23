@@ -7,3 +7,4 @@ Steps on how to run and obtain Structurally Convergent Antibody Groups (**SCAGs*
 2. For each cluster, consensus amino acid sequences of the CDR3's were calculated using the following script ('_analysis/parse_mmseq2cluster.py_')
    
 <ins> **Structure based features (SACGs features)**</ins>
+1. Heavy chain immunoglobulin sequence repertoire in the HIV and atopy cohorts were processed with SAAB+([paper](https://pubmed.ncbi.nlm.nih.gov/20034110/))
