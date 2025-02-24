@@ -4,8 +4,8 @@ Steps on how to run and obtain Structurally Convergent Antibody Groups (**SCAGs*
 ## Step one : Sequence and Structural BCR feature generation
 <ins> **Sequence based features (VJ3 features)**</ins>
 1. To generate sequence VJ3 features, CDR3 sequences of equal lengths using the same V and J segment genes for our study cohorts were clustered using MMseq2 as indicated in the following scripts
-  - '_lsf-jobs/do_stage_cluster_mmseq2.sh_'
-  - '_lsf-jobs/do_stage_search_mmseq2.sh_'
+    - '_lsf-jobs/do_stage_cluster_mmseq2.sh_'
+    - '_lsf-jobs/do_stage_search_mmseq2.sh_'
 3. For each cluster, consensus amino acid sequences of the CDR3's were calculated using the following script
     - '_analysis/parse_mmseq2cluster.py_'
    
