@@ -34,7 +34,7 @@ Steps on how to run and obtain Structurally Convergent Antibody Groups (**SCAGs*
     - '_analysis/logistic_regression_model_updated.py_'
          - Compile and run the python script above using the commands found in '_lsf-jobs/do_machine_learning_model.sh_'
 
-## Step three : Carry out model exploration and predictive feature selection
+## Step three : Model exploration and predictive feature selection
 
 ## Step four : Visualizations
 
