@@ -1,9 +1,8 @@
 # SCAGs
 Steps on how to run and obtain Structurally Convergent Antibody Groups (**SCAGs**)
 
-Hiighly similar antibodies elicited in multiple individuals in response to the same antigen (convergent antibodies) show great promise, especially as a diagnostic biomarker.\
-The **SCAGs** project outlines the implementation of structural information about the three immunoglobulin heavy CDR regions (CDR1-3) in defing convergence and shows that this \
-approach out performs prior approaches when predicting HIV infection and food sensitization status.
+Hiighly similar antibodies elicited in multiple individuals in response to the same antigen (convergent antibodies) show great promise, especially as a diagnostic biomarker.
+The **SCAGs** project outlines the implementation of structural information about the three immunoglobulin heavy CDR regions (CDR1-3) in defing convergence and shows that this approach out performs prior approaches when predicting HIV infection and food sensitization status.
 
 Complete documentation of the steps carried out in this project are described below.
 
